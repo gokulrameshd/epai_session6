@@ -52,9 +52,9 @@
 ## High card 
 - - In this combination the numbers are all different  and contains all four suits.
 
-    ____________________________________________________________________________________
+    -------------------------------------------------------------------------------------
     classes                                 |    combinations (examples)
-    ____________________________________________________________________________________
+    -----------------------------------------------------------------------------------
     * Royal flush                            | ('ace', 'hearts'),('jack', 'hearts'),('queen', 'hearts'),('king', 'hearts'),(10, 'hearts')
     * Straight flush                         | (10, 'hearts'),(9, 'hearts'),(8, 'hearts'),(7, 'hearts'),(6, 'hearts')
     * Four kind                            | ('queen','hearts'),('queen','clubs'),('queen','spades'),('queen','diamonds'),('king','hearts')
