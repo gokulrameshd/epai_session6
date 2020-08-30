@@ -80,6 +80,59 @@ test_cases = {'royal_flush':[[('ace', 'hearts'),('jack', 'hearts'),('queen', 'he
                          [(5,'hearts'),('jack','spades'),('ace','clubs')]]}
 
 
+# classes = {'royal_flush':1 , 'straight_flush':2 , 'four_kind':3,
+#             'full_house':4 , 'flush' : 5 , 'straight':6 ,
+#             'three_kind': 7 , 'two_pair' : 8 , 'one_pair' : 9,
+#             'high_card': 10 ,'' : 11}
+# five
+test_case_1 = {'a' : test_cases['royal_flush'][0] , "b" : test_cases['straight_flush'][0]}
+test_case_2 = {'a' : test_cases['royal_flush'][0] , "b" : test_cases['four_kind'][0]}
+test_case_3 = {'a' : test_cases['royal_flush'][0] , "b" : test_cases['full_house'][0]}
+test_case_4 = {'a' : test_cases['royal_flush'][0] , "b" : test_cases['flush'][0]}
+test_case_5 = {'a' : test_cases['royal_flush'][0] , "b" : test_cases['straight'][0]}
+test_case_6 = {'a' : test_cases['royal_flush'][0] , "b" : test_cases['three_kind'][0]}
+test_case_7 = {'a' : test_cases['royal_flush'][0] , "b" : test_cases['two_pair'][0]}
+test_case_8 = {'a' : test_cases['royal_flush'][0] , "b" : test_cases['one_pair'][0]}
+test_case_9 = {'a' : test_cases['royal_flush'][0] , "b" : test_cases['high_card'][0]}
+
+test_case_10 = {'a' : test_cases['high_card'][0] , "b" : test_cases['straight_flush'][0]}
+test_case_11 = {'a' : test_cases['high_card'][0] , "b" : test_cases['four_kind'][0]}
+test_case_12 = {'a' : test_cases['high_card'][0] , "b" : test_cases['full_house'][0]}
+test_case_12 = {'a' : test_cases['high_card'][0] , "b" : test_cases['flush'][0]}
+test_case_13 = {'a' : test_cases['high_card'][0] , "b" : test_cases['straight'][0]}
+test_case_14= {'a' : test_cases['high_card'][0] , "b" : test_cases['three_kind'][0]}
+test_case_15 = {'a' : test_cases['high_card'][0] , "b" : test_cases['two_pair'][0]}
+test_case_16 = {'a' : test_cases['high_card'][0] , "b" : test_cases['one_pair'][0]}
+test_case_17 = {'a' : test_cases['high_card'][0] , "b" : test_cases['royal_flush'][0]}
+
+test_case_18 = {'a' : test_cases['flush'][1] , "b" : test_cases['straight_flush'][0]}#b,b,b,Draw,a,a,b,a,b
+test_case_19 = {'a' : test_cases['flush'][1] , "b" : test_cases['four_kind'][0]}#b
+test_case_20 = {'a' : test_cases['flush'][1] , "b" : test_cases['full_house'][0]}#b
+test_case_21 = {'a' : test_cases['flush'][1] , "b" : test_cases['flush'][0]}#Draw
+test_case_22 = {'a' : test_cases['flush'][1] , "b" : test_cases['straight'][0]}#a
+test_case_23= {'a' : test_cases['flush'][1] , "b" : test_cases['three_kind'][0]}#a
+test_case_24 = {'a' : test_cases['flush'][1] , "b" : test_cases['two_pair'][0]}#a
+test_case_25 = {'a' : test_cases['flush'][1] , "b" : test_cases['one_pair'][0]}#a
+test_case_26 = {'a' : test_cases['flush'][1] , "b" : test_cases['royal_flush'][0]}#b
+
+# classes = {'royal_flush':1 , 'straight_flush':2 , 'four_kind':3,
+#             'full_house':4 , 'flush' : 5 , 'straight':6 ,
+#             'three_kind': 7 , 'two_pair' : 8 , 'one_pair' : 9,
+#             'high_card': 10 ,'' : 11}
+
+test_case_27 = {'a' : test_cases['three_kind'][1] , "b" : test_cases['straight_flush'][0]}#b,b,b,a,a,a,a,b
+test_case_28 = {'a' : test_cases['straight'][1] , "b" : test_cases['four_kind'][0]}#b
+test_case_29 = {'a' : test_cases['one_pair'][1] , "b" : test_cases['full_house'][0]}#b
+test_case_30 = {'a' : test_cases['two_pair'][1] , "b" : test_cases['flush'][0]}#b
+test_case_31 = {'a' : test_cases['four_kind'][1] , "b" : test_cases['straight'][0]}#a
+test_case_32= {'a' : test_cases['straight_flush'][1] , "b" : test_cases['three_kind'][0]}#a
+test_case_33 = {'a' : test_cases['royal_flush'][1] , "b" : test_cases['two_pair'][0]}#a
+test_case_34 = {'a' : test_cases['full_house'][1] , "b" : test_cases['one_pair'][0]}#a
+test_case_35 = {'a' : test_cases['one_pair'][1] , "b" : test_cases['royal_flush'][0]}#b
+
+
+
+
 
 def test_royal_flush():
     for i in range(len(test_cases['royal_flush'])):
@@ -133,3 +186,240 @@ def test_high_card():
         a_res ,a_sum_sort,a_sum_num = get_class(test_cases['high_card'][i])
         print(np.unique(a_res)[0] )
         assert np.unique(a_res)[0] == 'high_card' ,"worked!!"
+
+
+def test_create_deck():
+    deck = []
+    for i in num:
+        for j in suit:
+            a = (i,j)
+            deck.append(a)
+    d1 = create_deck()
+    assert d1 == deck , "worked!!!!!"
+
+def test_create_deck_spec():
+    deck = []
+    for i in num :
+        for j in suit:
+            a = (i,j)
+            deck.append(a)
+    d1 = create_deck_spec()
+    assert d1 == deck , "worked!!!!!"
+
+
+
+
+def test_get_winner_1():
+    a = test_case_1['a']
+    b = test_case_1['b']
+    winner = get_winner(a,b)
+    assert winner == 'a' , "worked!!!!!"
+
+def test_get_winner_2():
+    a = test_case_2['a']
+    b = test_case_2['b']
+    winner = get_winner(a,b)
+    assert winner == 'a' , "worked!!!!!"
+
+def test_get_winner_3():
+    a = test_case_3['a']
+    b = test_case_3['b']
+    winner = get_winner(a,b)
+    assert winner == 'a' , "worked!!!!!"
+
+def test_get_winner_4():
+    a = test_case_4['a']
+    b = test_case_4['b']
+    winner = get_winner(a,b)
+    assert winner == 'a' , "worked!!!!!"
+
+def test_get_winner_5():
+    a = test_case_5['a']
+    b = test_case_5['b']
+    winner = get_winner(a,b)
+    winner == 'a' , "worked!!!!!"
+
+def test_get_winner_6():
+    a = test_case_6['a']
+    b = test_case_6['b']
+    winner = get_winner(a,b)
+    assert winner == 'a' , "worked!!!!!"
+
+def test_get_winner_7():
+    a = test_case_7['a']
+    b = test_case_7['b']
+    winner = get_winner(a,b)
+    assert winner == 'a' , "worked!!!!!"
+
+def test_get_winner_8():
+    a = test_case_8['a']
+    b = test_case_8['b']
+    winner = get_winner(a,b)
+    assert winner == 'a' , "worked!!!!!"
+
+def test_get_winner_9():
+    a = test_case_9['a']
+    b = test_case_9['b']
+    winner = get_winner(a,b)
+    assert winner == 'a' , "worked!!!!!"
+
+def test_get_winner_10():
+    a = test_case_10['a']
+    b = test_case_10['b']
+    winner = get_winner(a,b)
+    assert winner == 'b' , "worked!!!!!"
+
+def test_get_winner_11():
+    a = test_case_11['a']
+    b = test_case_11['b']
+    winner = get_winner(a,b)
+    assert winner == 'b' , "worked!!!!!"
+
+def test_get_winner_12():
+    a = test_case_12['a']
+    b = test_case_12['b']
+    winner = get_winner(a,b)
+    assert winner == 'b' , "worked!!!!!"
+
+def test_get_winner_13():
+    a = test_case_13['a']
+    b = test_case_13['b']
+    winner = get_winner(a,b)
+    assert winner == 'b' , "worked!!!!!"
+
+def test_get_winner_14():
+    a = test_case_14['a']
+    b = test_case_14['b']
+    winner = get_winner(a,b)
+    assert winner == 'b' , "worked!!!!!"
+
+def test_get_winner_15():
+    a = test_case_15['a']
+    b = test_case_15['b']
+    winner = get_winner(a,b)
+    assert winner == 'b' , "worked!!!!!"
+
+def test_get_winner_16():
+    a = test_case_16['a']
+    b = test_case_16['b']
+    winner = get_winner(a,b)
+    assert winner == 'b' , "worked!!!!!"
+
+def test_get_winner_17():
+    a = test_case_17['a']
+    b = test_case_17['b']
+    winner = get_winner(a,b)
+    assert winner == 'b' , "worked!!!!!"
+
+#a,b,b,Draw,a,a,b,a,b
+def test_get_winner_18():
+    a = test_case_18['a']
+    b = test_case_18['b']
+    winner = get_winner(a,b)
+    assert winner == 'b' , "worked!!!!!"
+
+def test_get_winner_19():
+    a = test_case_19['a']
+    b = test_case_19['b']
+    winner = get_winner(a,b)
+    assert winner == 'b' , "worked!!!!!"
+
+def test_get_winner_20():
+    a = test_case_20['a']
+    b = test_case_20['b']
+    winner = get_winner(a,b)
+    assert winner == 'b' , "worked!!!!!"
+
+def test_get_winner_21():
+    a = test_case_21['a']
+    b = test_case_21['b']
+    winner = get_winner(a,b)
+    assert winner == 'Draw' , "worked!!!!!"
+
+def test_get_winner_22():
+    a = test_case_22['a']
+    b = test_case_22['b']
+    winner = get_winner(a,b)
+    assert winner == 'a' , "worked!!!!!"
+
+def test_get_winner_23():
+    a = test_case_23['a']
+    b = test_case_23['b']
+    winner = get_winner(a,b)
+    assert winner == 'a' , "worked!!!!!"
+
+def test_get_winner_24():
+    a = test_case_24['a']
+    b = test_case_24['b']
+    winner = get_winner(a,b)
+    assert winner == 'a' , "worked!!!!!"
+
+def test_get_winner_25():
+    a = test_case_25['a']
+    b = test_case_25['b']
+    winner = get_winner(a,b)
+    assert winner == 'a' , "worked!!!!!"
+
+def test_get_winner_26():
+    a = test_case_26['a']
+    b = test_case_26['b']
+    winner = get_winner(a,b)
+    assert winner == 'b' , "worked!!!!!"
+
+def test_get_winner_27():
+    a = test_case_27['a']
+    b = test_case_27['b']
+    winner = get_winner(a,b)
+    assert winner == 'b' , "worked!!!!!"
+
+def test_get_winner_28():
+    a = test_case_28['a']
+    b = test_case_28['b']
+    winner = get_winner(a,b)
+    assert winner == 'b' , "worked!!!!!"
+
+def test_get_winner_29():
+    a = test_case_29['a']
+    b = test_case_29['b']
+    winner = get_winner(a,b)
+    assert winner == 'b' , "worked!!!!!"
+
+def test_get_winner_30():
+    a = test_case_30['a']
+    b = test_case_30['b']
+    winner = get_winner(a,b)
+    assert winner == 'b' , "worked!!!!!"
+
+def test_get_winner_31():
+    a = test_case_31['a']
+    b = test_case_31['b']
+    winner = get_winner(a,b)
+    assert winner == 'a' , "worked!!!!!"
+
+def test_get_winner_32():
+    a = test_case_32['a']
+    b = test_case_32['b']
+    winner = get_winner(a,b)
+    assert winner == 'a' , "worked!!!!!"
+
+def test_get_winner_33():
+    a = test_case_33['a']
+    b = test_case_33['b']
+    winner = get_winner(a,b)
+    winner == 'a' , "worked!!!!!"
+
+def test_get_winner_34():
+    a = test_case_34['a']
+    b = test_case_34['b']
+    winner = get_winner(a,b)
+    winner == 'a' , "worked!!!!!"
+
+def test_get_winner_35():
+    a = test_case_35['a']
+    b = test_case_35['b']
+    winner = get_winner(a,b)
+    winner == 'b' , "worked!!!!!"
+
+
+# #b,b,b,a,a,a,a,b
+

@@ -6,15 +6,19 @@ deck = []
 
 def create_deck():
     '''This function creates deck of cards using list coprehension'''
-    suit =['Spades', 'Hearts', 'Diamonds','Clubs']
+    suit =['spades', 'hearts', 'diamonds','clubs']
     num = ['ace',2,3,4,5,6,7,8,9,10,'jack','queen','king']
     # list(map(lambda a,b,c,d : for i in suit )
-    l = [(s,n) for s in suit for n in num]
+    l = [(n,s) for n in num for s in suit]
     return l
 
 
-def create_deck_spec(suit,num):
+
+
+def create_deck_spec():
     '''This function creates deck of cards using map , lambda , zip functions'''
+    suit =['spades', 'hearts', 'diamonds','clubs']
+    num = ['ace',2,3,4,5,6,7,8,9,10,'jack','queen','king']
     c = []
     r =list(map(lambda a : [(a[0],a[1][0]),(a[0],a[1][1]),(a[0],a[1][2]),(a[0],a[1][3])] , zip(num,[suit for i in range(len(num))])))
     for i in r:
@@ -108,26 +112,27 @@ def get_class(a):
 
 
 def get_winner(a,b):
-    
+
     classes = {'royal_flush':1 , 'straight_flush':2 , 'four_kind':3,
                 'full_house':4 , 'flush' : 5 , 'straight':6 ,
                 'three_kind': 7 , 'two_pair' : 8 , 'one_pair' : 9,
                 'high_card': 10 ,'' : 11}
+
     a_res ,a_sum_sort,a_sum_num = get_class(a)
     b_res ,a_sum_sort,b_sum_num = get_class(b)
 
     if classes[a_res[0]] < classes[b_res[0]]:
-        winnner = 'a'
+        winner = 'a'
     elif classes[a_res[0]] > classes[b_res[0]]:
         winner = 'b'
     else :
         if a_sum_num > b_sum_num :
-            winnner = 'a'
+            winner = 'a'
         elif a_sum_num < b_sum_num :
-            winnner = 'b'
+            winner = 'b'
         else:
-            winnner = 'Nobody'
-
+            winner = 'Draw'
+    return winner
 
 
 
