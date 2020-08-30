@@ -52,18 +52,18 @@
 ## High card 
 - - In this combination the numbers are all different  and contains all four suits.
 
-    -------------------------------------------------------------------------------------
-    classes                                 |    combinations (examples)
-    -----------------------------------------------------------------------------------
-    * Royal flush                            | ('ace', 'hearts'),('jack', 'hearts'),('queen', 'hearts'),('king', 'hearts'),(10, 'hearts')
-    * Straight flush                         | (10, 'hearts'),(9, 'hearts'),(8, 'hearts'),(7, 'hearts'),(6, 'hearts')
-    * Four kind                            | ('queen','hearts'),('queen','clubs'),('queen','spades'),('queen','diamonds'),('king','hearts')
-    * Full house                            | ('queen','hearts'),('queen','clubs'),('ace','spades'),('ace','diamonds'),('ace','hearts')  
-    * flush                             |('king','hearts'),(1,'hearts'),(5,'hearts'),(8,'hearts'),(9,'hearts') 
-    * Straight                           | (8,'hearts'),(7,'spades'),(6,'clubs'),(5,'diamonds'),(4,'hearts')
-    * Three kind                        |  ('queen','hearts'),('queen','spades'),('queen','clubs'),(5,'diamonds'),(4,'hearts')
-    * Two pair                           | ('queen','hearts'),('queen','spades'),('ace','clubs'),(4,'diamonds'),(4,'hearts')
-    * One pair                          | ('queen','hearts'),('queen','spades'),('ace','clubs'),(3,'diamonds'),(4,'hearts')
-    * High card                          | ('queen','hearts'),('jack','spades'),('ace','clubs'),(2,'diamonds'),(4,'hearts')
+-------------------------------------------------------------------------------------
+classes                                 |    combinations (examples)
+-----------------------------------------------------------------------------------
+* Royal flush                            | ('ace', 'hearts'),('jack', 'hearts'),('queen', 'hearts'),('king', 'hearts'),(10, 'hearts')
+* Straight flush                         | (10, 'hearts'),(9, 'hearts'),(8, 'hearts'),(7, 'hearts'),(6, 'hearts')
+* Four kind                            | ('queen','hearts'),('queen','clubs'),('queen','spades'),('queen','diamonds'),('king','hearts')
+* Full house                            | ('queen','hearts'),('queen','clubs'),('ace','spades'),('ace','diamonds'),('ace','hearts')  
+* flush                             |('king','hearts'),(1,'hearts'),(5,'hearts'),(8,'hearts'),(9,'hearts') 
+* Straight                           | (8,'hearts'),(7,'spades'),(6,'clubs'),(5,'diamonds'),(4,'hearts')
+* Three kind                        |  ('queen','hearts'),('queen','spades'),('queen','clubs'),(5,'diamonds'),(4,'hearts')
+* Two pair                           | ('queen','hearts'),('queen','spades'),('ace','clubs'),(4,'diamonds'),(4,'hearts')
+* One pair                          | ('queen','hearts'),('queen','spades'),('ace','clubs'),(3,'diamonds'),(4,'hearts')
+* High card                          | ('queen','hearts'),('jack','spades'),('ace','clubs'),(2,'diamonds'),(4,'hearts')
 
 
